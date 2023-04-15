@@ -1,0 +1,96 @@
+.main {
+    flex: 1;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Verdana";
+    font-size: 16pt;
+    background-color: lightgray;
+    padding: 30px;
+}
+
+#registers {
+    font-family: "Consolas", monospace;
+    font-size: 10pt;
+    width: 256px;
+    margin: auto;
+    padding-left: 0px;
+    padding-right: 30px;
+    padding-top: 0px;
+    text-align: left;
+    background-color: #000;
+    color: #CCC;
+    height: 160px;
+    border: 1px solid #888;
+}
+
+#registers pre {
+    margin: 4px;
+    margin-top: 12px;
+}
+
+.big-pane {
+    display: inline-block;
+	border: 0;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.left-side {
+    background-color: lightgray;
+    padding-left: 30px;
+    font-size: 16px;
+}
+
+.right-side {
+    background-color: lightgrey;
+    text-align: center;
+}
+
+#right-output {
+    width: 256px;
+    height: 256px;
+    background-color: #444;
+    margin: auto;
+    border: 1px solid black;
+    box-shadow: 5px 5px 20px rgba(0,0,0,0.2);
+}
+
+.main-code {
+    width: 280px;
+    height: 400px;
+    font-family: "Consolas";
+    font-size: 14px;
+    padding: 10px;
+    border: 0px rgba(0,0,0,0);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #eee;
+    border: 1px solid rgba(119, 119, 119, 0.2);
+}
+
+.horiz-flex {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    width: 260px;
+    margin-top: 6px;
+}
+
+.horiz-flex button {
+    font-family: "Verdana";
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    background-color: #eee;
+}
+
+.horiz-flex button:hover {
+    background-color: #888;
+    transition: 0.5s;
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link href="./index.css" rel="stylesheet">
+    <title>Minilisp VM</title>
+  </head>
+  <body>
+    
+    <div class="big-pane left-side">
+        <textarea
+            rows="35"
+            cols="20"
+            name="text"
+            placeholder="Enter code"
+            class="main-code"
+            id="main-code">
+set r1, 0
+set r4, 63
+set r8, 4
+set r9, 8
+set r12, 128
+set r13, 160
+set r14, 192
+set r15, 256
+
+row:
+  jg r1, r4, end
+
+  set r2, 0
+  col:
+    jg r2, r4, endcol
+    set r12, 128
+    set r13, 140
+    set r14, 128
+
+    mov r10, r1
+    add r10, r2
+    mod r10, r9
+    jl r10, r8, skippx
+    set r11, 80
+    add r14, r11
+skippx:
+
+    mov r10, r1
+    add r10, r15
+    sub r10, r2
+    mod r10, r9
+    jl r10, r8, skippx2
+    set r11, 80
+    add r12, r11
+skippx2:
+
+    col r12, r13, r14
+    px r1, r2
+    set r3, 1
+    add r2, r3
+    jmp col
+  endcol:
+
+  set r3, 1
+  add r1, r3
+  jmp row
+end:
+
+halt
+          </textarea>
+        <br/>  
+        <div class="horiz-flex">
+          <button type="button" id="run-button">Run One Instr</button>
+          <button type="button" id="compiler-button">Compile</button>
+          <button type="button" id="start-stop-button">Start</button>
+        </div>
+    </div>
+    <div class="big-pane right-side">
+        <canvas id="right-output" width="256" height="256"></canvas>
+        <div id="registers"></div>
+            <br/>
+        </form>
+    </div>
+
+
+    <script src="./index.js"></script>
+  </body>
+</html>
